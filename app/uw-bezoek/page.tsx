@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { MediaPlaceholder, WireframeContainer, WireframeSection } from "@/components/wireframe/WireframePrimitives";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
@@ -10,104 +11,81 @@ export const metadata = pageMetadata({
 
 export default function UwBezoekPage() {
   return (
-    <main className="bg-white text-neutral-900">
-      <section className="border-b border-neutral-200 py-28">
-        <div className="mx-auto max-w-3xl px-6 text-center">
-          <p className="mb-4 text-sm uppercase tracking-[0.12em] text-neutral-500">Uw bezoek</p>
-          <h1 className="mb-8 text-4xl font-medium leading-tight md:text-5xl">
-            Een rustig moment om kunst te ervaren, op uw tempo.
-          </h1>
-          <div className="mx-auto max-w-2xl space-y-4 text-lg text-neutral-600">
-            <p>U komt binnen, hangt uw jas op, en ademt even uit.</p>
-            <p>Wij zetten koffie of thee. Daarna bepaalt u het tempo.</p>
-          </div>
-        </div>
-      </section>
+    <>
+      <WireframeSection>
+        <WireframeContainer>
+          <MediaPlaceholder label="Hero image placeholder" className="min-h-[260px] md:min-h-[340px] lg:min-h-[420px]" />
+        </WireframeContainer>
+      </WireframeSection>
 
-      <section className="border-b border-neutral-200 bg-[#F7F4EE] py-24">
-        <div className="mx-auto max-w-4xl px-6">
-          <h2 className="mb-10 text-3xl font-medium text-neutral-900">Zo verloopt uw middag</h2>
-          <div className="grid gap-6 md:grid-cols-3">
-            <div className="rounded-2xl bg-white p-7">
-              <p className="mb-2 text-sm text-neutral-500">1</p>
-              <h3 className="mb-3 text-lg font-medium">Persoonlijk welkom</h3>
-              <p className="text-sm leading-relaxed text-neutral-600">
-                We doen open, nemen uw jas aan en vragen wat u wilt drinken.
-              </p>
-            </div>
-            <div className="rounded-2xl bg-white p-7">
-              <p className="mb-2 text-sm text-neutral-500">2</p>
-              <h3 className="mb-3 text-lg font-medium">Korte afstemming</h3>
-              <p className="text-sm leading-relaxed text-neutral-600">
-                In een paar minuten horen we wat u mooi vindt en waar u juist niet van houdt.
-              </p>
-            </div>
-            <div className="rounded-2xl bg-white p-7">
-              <p className="mb-2 text-sm text-neutral-500">3</p>
-              <h3 className="mb-3 text-lg font-medium">Vrij rondkijken</h3>
-              <p className="text-sm leading-relaxed text-neutral-600">
-                Daarna loopt u vrij rond. Wij blijven dichtbij als u vragen heeft.
-              </p>
-            </div>
+      <WireframeSection tone="neutral">
+        <WireframeContainer>
+          <div className="mx-auto max-w-3xl text-center">
+            <h1 className="text-3xl font-semibold text-neutral-800 lg:text-4xl">Intro section</h1>
+            <p className="mt-4 text-sm text-neutral-600">Intro text placeholder</p>
           </div>
-          <p className="mt-8 text-sm text-neutral-500">
-            Gemiddelde duur: 60 tot 90 minuten. Korter of langer kan altijd.
-          </p>
-        </div>
-      </section>
+        </WireframeContainer>
+      </WireframeSection>
 
-      <section className="border-b border-neutral-200 py-24">
-        <div className="mx-auto max-w-3xl px-6">
-          <h2 className="mb-8 text-3xl font-medium text-neutral-900">Geen druk, geen verplichting</h2>
-          <div className="grid gap-4 text-neutral-700 md:grid-cols-3">
-            {[
-              "U hoeft niets voor te bereiden.",
-              "Er is geen verkooppraatje en geen haast om te beslissen.",
-              "Kijken, vergelijken, nog een ronde lopen. Alles is goed.",
-            ].map((item) => (
-              <article key={item} className="rounded-2xl border border-neutral-200 bg-white p-6 text-sm leading-relaxed">
-                {item}
+      <WireframeSection>
+        <WireframeContainer>
+          <h2 className="text-2xl font-medium text-neutral-800">Zo verloopt uw middag</h2>
+          <div className="mt-8 grid gap-6 lg:grid-cols-3">
+            {[1, 2, 3].map((item) => (
+              <article key={item} className="rounded-xl border border-neutral-200 bg-neutral-50 p-5">
+                <MediaPlaceholder label="Image placeholder" className="min-h-40" />
+                <h3 className="mt-4 text-lg font-medium text-neutral-800">Step title {item}</h3>
+                <p className="mt-2 text-sm text-neutral-600">Step text placeholder</p>
               </article>
             ))}
           </div>
-        </div>
-      </section>
+        </WireframeContainer>
+      </WireframeSection>
 
-      <section className="border-b border-neutral-200 bg-[#F7F4EE] py-24">
-        <div className="mx-auto max-w-3xl px-6">
-          <h2 className="mb-8 text-3xl font-medium text-neutral-900">Praktische details</h2>
-          <div className="grid gap-4 text-neutral-700 md:grid-cols-3">
-            <article className="rounded-2xl border border-neutral-200 bg-white p-6 text-sm leading-relaxed">
-              <p className="font-medium text-neutral-900">Tijd</p>
-              <p className="mt-2">Meestal 60 tot 90 minuten.</p>
-            </article>
-            <article className="rounded-2xl border border-neutral-200 bg-white p-6 text-sm leading-relaxed">
-              <p className="font-medium text-neutral-900">Met wie</p>
-              <p className="mt-2">Alleen, met z&apos;n tweeën of met een klein gezelschap.</p>
-            </article>
-            <article className="rounded-2xl border border-neutral-200 bg-white p-6 text-sm leading-relaxed">
-              <p className="font-medium text-neutral-900">Locatie</p>
-              <p className="mt-2">In Hengelo, goed bereikbaar via A1/A35 en ook met het openbaar vervoer.</p>
-            </article>
+      <WireframeSection tone="neutral">
+        <WireframeContainer>
+          <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
+            <div>
+              <h2 className="text-2xl font-medium text-neutral-800">Geen druk section</h2>
+              <div className="mt-4 space-y-3 text-sm text-neutral-600">
+                <p>Text block placeholder</p>
+                <p>Text block placeholder</p>
+              </div>
+            </div>
+            <MediaPlaceholder label="Image placeholder" className="min-h-[260px] lg:min-h-[320px]" />
           </div>
-        </div>
-      </section>
+        </WireframeContainer>
+      </WireframeSection>
 
-      <section className="py-24">
-        <div className="mx-auto max-w-3xl px-6 text-center">
-          <h2 className="mb-6 text-3xl font-medium text-neutral-900">Plan uw bezoek wanneer het u past</h2>
-          <p className="mx-auto mb-10 max-w-xl text-neutral-600">
-            Kies een moment in de agenda. Wij bevestigen uw afspraak kort daarna.
-          </p>
-          <Link
-            href="/planner"
-            className="inline-flex rounded-md bg-[#7A1E2C] px-6 py-3 text-white transition-colors duration-200 hover:bg-[#5E1A26]"
-          >
-            Plan uw bezoek
-          </Link>
-          <p className="mt-4 text-sm text-neutral-500">U kunt uw moment later eenvoudig verzetten of annuleren.</p>
-        </div>
-      </section>
-    </main>
+      <WireframeSection>
+        <WireframeContainer>
+          <h2 className="text-2xl font-medium text-neutral-800">Praktische details</h2>
+          <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {[1, 2, 3].map((item) => (
+              <article key={item} className="rounded-xl border border-neutral-200 bg-neutral-50 p-5">
+                <p className="text-sm text-neutral-500">Detail card</p>
+              </article>
+            ))}
+          </div>
+        </WireframeContainer>
+      </WireframeSection>
+
+      <WireframeSection tone="neutral">
+        <WireframeContainer>
+          <div className="rounded-xl border border-neutral-200 bg-white p-8 text-center">
+            <h2 className="text-2xl font-medium text-neutral-800">CTA section</h2>
+            <p className="mt-3 text-sm text-neutral-600">Support text placeholder</p>
+            <div className="mt-6">
+              <Link
+                href="/planner"
+                className="inline-flex min-h-12 items-center justify-center rounded-md border border-neutral-300 bg-neutral-100 px-6 text-sm font-medium text-neutral-700"
+              >
+                CTA button
+              </Link>
+            </div>
+          </div>
+        </WireframeContainer>
+      </WireframeSection>
+    </>
   );
 }

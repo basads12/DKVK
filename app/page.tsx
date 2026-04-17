@@ -2,7 +2,6 @@ import Link from "next/link";
 import { CtaBlock } from "@/components/CtaBlock";
 import { DarkAnchor } from "@/components/DarkAnchor";
 import { FaqList } from "@/components/FaqList";
-import { Hero } from "@/components/Hero";
 import { JsonLd } from "@/components/JsonLd";
 import { ReviewsList } from "@/components/ReviewsList";
 import { ThreeSteps } from "@/components/ThreeSteps";
@@ -20,30 +19,45 @@ export const metadata = pageMetadata({
 export default function HomePage() {
   return (
     <>
-      <Hero
-        headline="Een middag voor u geregeld."
-        subheadline="In Hengelo. Op een dag die u uitkomt."
-        primaryCta={{ label: "Activeer uw cheque", href: "/cheque" }}
-        secondaryCta={{ label: "Eerst zien hoe een bezoek verloopt", href: "/uw-bezoek" }}
-      />
-
-      <section className="bg-[#F7F4EE] py-10">
-        <div className="mx-auto max-w-default px-5 lg:px-8">
-          <div className="rounded-2xl border border-border bg-white p-6">
-            <p className="text-sm font-medium uppercase tracking-[0.14em] text-gold">Vertrouwd sinds 2005</p>
-            <div className="mt-4 grid gap-4 md:grid-cols-3">
-              <p className="text-sm text-ink">Uitsluitend op afspraak in Hengelo</p>
-              <p className="text-sm text-ink">Rustige ontvangst met koffie of thee</p>
-              <p className="text-sm text-ink">Geen verplichting om iets mee te nemen</p>
-            </div>
+      <section className="bg-[#F7F4EE] py-28">
+        <div className="mx-auto max-w-wide px-5 lg:px-8">
+          <h1 className="max-w-4xl text-5xl font-semibold leading-[1.05] tracking-[-0.02em] text-bordeaux lg:text-6xl">
+            Een middag voor u geregeld.
+          </h1>
+          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-ink lg:text-[22px]">
+            In onze galerie in Hengelo. Op een dag die u uitkomt, in een rustige setting met tijd voor uw eigen
+            tempo.
+          </p>
+          <div className="mt-12 flex flex-col gap-6 lg:flex-row lg:items-center lg:gap-10">
+            <Link
+              href="/cheque"
+              className="inline-flex min-h-14 items-center justify-center rounded-md bg-bordeaux px-8 text-base font-medium text-creme transition-colors duration-200 ease-dkvk hover:bg-bordeaux-pressed focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bordeaux"
+            >
+              Activeer uw cheque
+            </Link>
+            <Link
+              href="/uw-bezoek"
+              className="inline-flex min-h-10 items-center text-sm text-muted underline underline-offset-4 transition-colors duration-150 ease-dkvk hover:text-bordeaux"
+            >
+              Lees wat u kunt verwachten
+            </Link>
           </div>
+          <TrustSignals className="mt-6" items={["Op afspraak", "Geen verplichting", "Rustig ontvangen"]} />
+        </div>
+      </section>
+
+      <section className="bg-white py-24">
+        <div className="mx-auto max-w-xl px-5 text-center lg:px-8">
+          <p className="text-lg leading-relaxed text-ink">
+            U hoeft niets voor te bereiden. Wij begeleiden u stap voor stap.
+          </p>
         </div>
       </section>
 
       <ThreeSteps
         eyebrow="DE WEG NAAR UW MIDDAG"
         heading="In drie stappen bent u binnen."
-        subheading="Drie korte stappen. Daarna staat de koffie klaar."
+        subheading="Kort en helder. Daarna staat de koffie klaar."
         steps={[
           {
             title: "Activeren",

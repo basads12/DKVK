@@ -47,17 +47,16 @@ export default function ContactPage() {
               playsInline
               preload="metadata"
               poster="/Video/web/DJI_20260319182426_0038_D_MASTER-poster.jpg"
-              className="h-full w-full object-cover motion-reduce:hidden"
+              className="h-full w-full object-cover"
             >
-              <source media="(max-width: 767px)" src="/Video/web/DJI_20260319182426_0038_D_MASTER-720p.mp4" type="video/mp4" />
-              <source media="(min-width: 768px)" src="/Video/web/DJI_20260319182426_0038_D_MASTER-1080p.mp4" type="video/mp4" />
+              <source src="/Video/web/DJI_20260319182426_0038_D_MASTER-1080p.mp4" type="video/mp4" />
             </video>
             <Image
               src="/Video/web/DJI_20260319182426_0038_D_MASTER-poster.jpg"
               alt="Luchtbeeld van de galerielocatie in Hengelo."
               fill
               sizes="(max-width: 1280px) 100vw, 50vw"
-              className="hidden object-cover motion-reduce:block"
+              className="hidden object-cover"
             />
           </div>
         </div>

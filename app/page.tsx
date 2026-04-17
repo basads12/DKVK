@@ -47,10 +47,9 @@ export default function HomePage() {
             playsInline
             preload="metadata"
             poster="/Video/web/DJI_20260319182158_0030_D_MASTER-poster.jpg"
-            className="h-full w-full object-cover object-center sm:object-[50%_40%] motion-reduce:hidden"
+            className="h-full w-full object-cover object-center sm:object-[50%_40%]"
           >
-            <source media="(max-width: 767px)" src="/Video/web/DJI_20260319182158_0030_D_MASTER-720p.mp4" type="video/mp4" />
-            <source media="(min-width: 768px)" src="/Video/web/DJI_20260319182158_0030_D_MASTER-1080p.mp4" type="video/mp4" />
+            <source src="/Video/web/DJI_20260319182158_0030_D_MASTER-1080p.mp4" type="video/mp4" />
           </video>
           <Image
             src="/Video/web/DJI_20260319182158_0030_D_MASTER-poster.jpg"
@@ -58,7 +57,7 @@ export default function HomePage() {
             fill
             priority
             sizes="100vw"
-            className="hidden object-cover object-center sm:object-[50%_40%] motion-reduce:block"
+            className="hidden object-cover object-center sm:object-[50%_40%]"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-ink/30 via-ink/55 to-bordeaux/90" />
         </div>

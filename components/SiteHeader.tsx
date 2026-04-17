@@ -57,14 +57,14 @@ export function SiteHeader() {
         <div className="ml-auto flex items-center gap-2 lg:ml-6">
           <Link
             href={isPlanner ? "/" : "/cheque"}
-            className="rounded-md bg-bordeaux px-5 py-2.5 text-sm font-medium text-creme transition-colors duration-200 ease-dkvk hover:bg-bordeaux-pressed focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bordeaux"
+            className="hidden rounded-md bg-bordeaux px-5 py-2.5 text-sm font-medium text-creme transition-colors duration-200 ease-dkvk hover:bg-bordeaux-pressed focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bordeaux md:inline-flex"
           >
             {isPlanner ? "Afbreken" : "Activeer uw cheque"}
           </Link>
           <button
             type="button"
             aria-controls="mobile-menu"
-            aria-expanded={open}
+            aria-expanded={open ? "true" : "false"}
             aria-label={open ? "Menu sluiten" : "Menu openen"}
             className="inline-flex h-11 w-11 items-center justify-center text-ink lg:hidden"
             onClick={() => setOpen((value) => !value)}

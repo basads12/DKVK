@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { ReactNode } from "react";
 import { JsonLd } from "@/components/JsonLd";
 import { faq, reviews, siteConfig } from "@/content/site";
 import { faqJsonLd, pageMetadata } from "@/lib/seo";
@@ -18,21 +17,18 @@ export default function HomePage() {
     `${siteConfig.address.street}, ${siteConfig.address.postalCode} ${siteConfig.address.city}`,
   )}`;
 
-  const steps: { title: string; body: string; icon: ReactNode }[] = [
+  const steps: { title: string; body: string }[] = [
     {
       title: "Activeer uw cheque",
       body: "Vul chequenummer en postcode in. Binnen enkele seconden ziet u of alles klopt.",
-      icon: <TicketIcon />,
     },
     {
       title: "Plan uw middag",
       body: "Kies een dagdeel dat u schikt. Maandag is doorgaans ons rustigste moment.",
-      icon: <CalendarIcon />,
     },
     {
       title: "Ontvangen worden met koffie",
       body: "Wij nemen de tijd, zonder verkooppraat en zonder verplichtingen.",
-      icon: <CoffeeIcon />,
     },
   ];
 
@@ -99,9 +95,13 @@ export default function HomePage() {
 
       <section className="bg-creme py-16 md:py-20">
         <div className="mx-auto max-w-default px-5 md:px-8">
-          <div className="mx-auto max-w-2xl rounded-2xl border border-border bg-sand px-6 py-8 text-center text-sm leading-relaxed text-ink md:text-base">
-            Wij leiden u rustig rond. U wordt ontvangen met koffie, kijkt op uw eigen tempo en beslist pas als u er zelf om
-            vraagt.
+          <div className="mx-auto max-w-2xl px-5">
+            <div className="mx-auto mb-8 h-px w-16 bg-gold/60" aria-hidden />
+            <p className="text-center text-lg font-light leading-relaxed text-ink md:text-2xl">
+              Wij leiden u rustig rond. U wordt ontvangen met koffie, kijkt op uw eigen tempo en beslist pas als u er zelf om
+              vraagt.
+            </p>
+            <div className="mx-auto mt-8 h-px w-16 bg-gold/60" aria-hidden />
           </div>
         </div>
       </section>
@@ -110,13 +110,10 @@ export default function HomePage() {
         <div className="mx-auto max-w-default px-5 md:px-8">
           <p className="text-xs font-medium uppercase tracking-[0.14em] text-gold">Zo werkt het</p>
           <h2 className="mt-3 text-3xl font-semibold text-ink md:text-4xl">In drie stappen naar uw bezoek</h2>
-          <ol className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <ol className="mt-10 grid gap-8 md:mt-12 md:grid-cols-3 md:gap-0 md:divide-x md:divide-border/50">
             {steps.map((step, index) => (
-              <li key={step.title} className="rounded-2xl border border-border bg-creme p-6">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-gold/30 bg-bordeaux/5 text-bordeaux">
-                  {step.icon}
-                </div>
-                <p className="mt-4 text-sm font-medium text-gold">{String(index + 1).padStart(2, "0")}</p>
+              <li key={step.title} className="p-5 md:p-6">
+                <p className="text-5xl font-light leading-none text-gold md:text-6xl">{String(index + 1).padStart(2, "0")}</p>
                 <h3 className="mt-3 text-xl font-semibold text-ink">{step.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-ink">{step.body}</p>
               </li>
@@ -292,45 +289,4 @@ function initialsFromAuthor(author: string) {
     .slice(0, 2)
     .map((part) => part[0]?.toUpperCase() ?? "")
     .join("");
-}
-
-function TicketIcon() {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden className="h-6 w-6">
-      <path
-        d="M5 7.5h14a1 1 0 0 1 1 1V11a2 2 0 0 0 0 4v2.5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V15a2 2 0 0 0 0-4V8.5a1 1 0 0 1 1-1Z"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.75"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path d="M12 7.5v11" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" />
-    </svg>
-  );
-}
-
-function CalendarIcon() {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden className="h-6 w-6">
-      <rect x="4" y="5.5" width="16" height="14" rx="2" fill="none" stroke="currentColor" strokeWidth="1.75" />
-      <path d="M8 3.5v4M16 3.5v4M4 10h16" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" />
-      <rect x="8" y="12.5" width="3" height="3" rx="0.75" fill="currentColor" />
-    </svg>
-  );
-}
-
-function CoffeeIcon() {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden className="h-6 w-6">
-      <path
-        d="M5 11h10v3.75A3.25 3.25 0 0 1 11.75 18H8.25A3.25 3.25 0 0 1 5 14.75V11Z"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.75"
-      />
-      <path d="M15 12h1.5a2 2 0 0 1 0 4H15" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" />
-      <path d="M7 20h8M8.5 7.5c0-.5.5-.9.5-1.5 0-.8-1-1.2-1-2M12 7.5c0-.5.5-.9.5-1.5 0-.8-1-1.2-1-2" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" />
-    </svg>
-  );
 }

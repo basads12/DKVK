@@ -162,17 +162,16 @@ export default function GaleriePage() {
               playsInline
               preload="metadata"
               poster="/Video/web/DJI_20260319182510_0041_D_MASTER-poster.jpg"
-              className="h-full w-full object-cover motion-reduce:hidden"
+              className="h-full w-full object-cover"
             >
-              <source media="(max-width: 767px)" src="/Video/web/DJI_20260319182510_0041_D_MASTER-720p.mp4" type="video/mp4" />
-              <source media="(min-width: 768px)" src="/Video/web/DJI_20260319182510_0041_D_MASTER-1080p.mp4" type="video/mp4" />
+              <source src="/Video/web/DJI_20260319182510_0041_D_MASTER-1080p.mp4" type="video/mp4" />
             </video>
             <Image
               src="/Video/web/DJI_20260319182510_0041_D_MASTER-poster.jpg"
               alt="Luchtbeeld van de buurt rond de galerie."
               fill
               sizes="(max-width: 1280px) 100vw, 1200px"
-              className="hidden object-cover motion-reduce:block"
+              className="hidden object-cover"
             />
           </div>
         </div>

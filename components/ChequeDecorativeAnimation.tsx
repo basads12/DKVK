@@ -22,7 +22,7 @@ export function ChequeDecorativeAnimation() {
     };
 
     const setSlowerPlayback = () => {
-      video.playbackRate = 0.35;
+      video.playbackRate = 0.0875;
     };
 
     const drawFrame = () => {
@@ -84,7 +84,11 @@ export function ChequeDecorativeAnimation() {
   }, []);
 
   return (
-    <div role="img" aria-label="Een vrouw houdt een doek vast waarop werken uit de galerie verschijnen.">
+    <div
+      role="img"
+      aria-label="Een vrouw houdt een doek vast waarop werken uit de galerie verschijnen."
+      className="overflow-hidden rounded-2xl bg-sand"
+    >
       <video
         ref={videoRef}
         autoPlay

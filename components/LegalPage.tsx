@@ -13,7 +13,7 @@ type LegalPageProps = {
 
 export function LegalPage({ title, sections }: LegalPageProps) {
   return (
-    <section className="bg-creme py-12 lg:py-20">
+    <section className="bg-white py-20 lg:py-24">
       <div className="mx-auto max-w-default px-5 lg:px-8">
         <h1 className="text-[40px] font-light text-bordeaux lg:text-[56px]">{title}</h1>
         <p className="mt-4 text-sm text-muted">Laatst bijgewerkt op {legalDate}</p>

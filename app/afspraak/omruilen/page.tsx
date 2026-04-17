@@ -9,7 +9,7 @@ export const metadata = pageMetadata({
 
 export default function OmruilenPage() {
   return (
-    <section className="bg-creme py-12 lg:py-28">
+    <section className="bg-white py-20 lg:py-28">
       <div className="mx-auto max-w-narrow px-5 lg:px-8">
         <h1 className="text-[44px] font-light text-bordeaux lg:text-[72px]">Een werk omruilen.</h1>
         <p className="mt-4 text-lg text-ink">U bent klant bij ons. Wij regelen dit rustig voor u.</p>

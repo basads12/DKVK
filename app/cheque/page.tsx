@@ -65,7 +65,7 @@ export default async function ChequePage({ searchParams }: Props) {
 
       <section className="bg-[#F7F4EE] py-20 lg:py-24">
         <div className="mx-auto max-w-narrow px-5 lg:px-8">
-          <blockquote>
+          <blockquote className="rounded-2xl border border-border bg-white p-6 shadow-[0_8px_24px_rgba(26,23,19,0.06)]">
             <p className="text-[17px] leading-relaxed text-ink">{`“${reviews.vanKesteren.quote}”`}</p>
             <cite className="mt-4 block text-sm not-italic text-muted">
               — {reviews.vanKesteren.author}, {reviews.vanKesteren.city}

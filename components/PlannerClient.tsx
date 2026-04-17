@@ -66,16 +66,10 @@ export function PlannerClient() {
   };
 
   return (
-    <section className="bg-creme py-12 pb-28 lg:py-20 lg:pb-20">
+    <section className="bg-white py-20 pb-32 lg:py-24 lg:pb-24">
       <div className="mx-auto max-w-narrow px-5 lg:px-8">
         {step <= 4 ? (
-          <p
-            role="progressbar"
-            aria-label="Planner voortgang"
-            aria-valuenow={step}
-            aria-valuemax={4}
-            className="text-sm text-muted"
-          >
+          <p className="text-sm text-muted" aria-live="polite">
             Stap {step} van 4
           </p>
         ) : null}
@@ -242,22 +236,22 @@ export function PlannerClient() {
           <div className="fixed inset-x-0 bottom-0 z-30 border-t border-border bg-creme p-4 lg:static lg:mt-8 lg:border-0 lg:bg-transparent lg:p-0">
             <div className="mx-auto max-w-narrow">
               <div className="flex gap-3">
-              {step > 1 ? (
+                {step > 1 ? (
+                  <button
+                    type="button"
+                    onClick={onBack}
+                    className="inline-flex min-h-12 items-center justify-center rounded-md border border-ink px-6 text-ink transition-colors hover:border-bordeaux hover:text-bordeaux"
+                  >
+                    Terug
+                  </button>
+                ) : null}
                 <button
                   type="button"
-                  onClick={onBack}
-                  className="inline-flex min-h-12 items-center justify-center rounded-md border border-ink px-6 text-ink transition-colors hover:border-bordeaux hover:text-bordeaux"
+                  onClick={onNext}
+                  className="inline-flex min-h-14 flex-1 items-center justify-center rounded-md bg-bordeaux px-8 text-base font-medium text-creme transition-colors duration-200 ease-dkvk hover:bg-bordeaux-pressed lg:flex-none"
                 >
-                  Terug
+                  {step === 3 ? "Bevestigen" : step === 4 ? "Afspraak vastleggen" : "Volgende"}
                 </button>
-              ) : null}
-              <button
-                type="button"
-                onClick={onNext}
-                className="inline-flex min-h-14 flex-1 items-center justify-center rounded-md bg-bordeaux px-8 text-base font-medium text-creme transition-colors duration-200 ease-dkvk hover:bg-bordeaux-pressed lg:flex-none"
-              >
-                {step === 3 ? "Bevestigen" : step === 4 ? "Afspraak vastleggen" : "Volgende"}
-              </button>
               </div>
               <TrustSignals className="mt-3" />
             </div>

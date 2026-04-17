@@ -7,7 +7,7 @@ type DarkAnchorProps = {
 
 export function DarkAnchor({ heading, subheading, body, cta }: DarkAnchorProps) {
   return (
-    <section className="bg-ink py-20 lg:py-28">
+    <section data-tone="dark" className="bg-ink py-20 lg:py-28">
       <div className="mx-auto max-w-wide px-5 lg:px-8">
         <h2 className="text-[32px] font-light tracking-[-0.015em] text-creme lg:text-[48px]">{heading}</h2>
         <p className="mt-3 text-xl text-[#D8D0C1]">{subheading}</p>

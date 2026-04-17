@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="nl">
-      <body className="bg-creme text-ink">
+      <body className="bg-white text-ink">
         <a href="#main" className="skip-link">
           Naar hoofdinhoud
         </a>

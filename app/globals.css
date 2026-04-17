@@ -27,6 +27,14 @@ main > section + section {
   border-top: 1px solid #e3dcce;
 }
 
+main > section:not([data-tone="dark"]) {
+  background-color: #ffffff !important;
+}
+
+main > section:nth-of-type(even):not([data-tone="dark"]) {
+  background-color: #f7f4ee !important;
+}
+
 .skip-link {
   position: absolute;
   left: -9999px;

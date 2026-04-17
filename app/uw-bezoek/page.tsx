@@ -56,10 +56,16 @@ export default function UwBezoekPage() {
       <section className="border-b border-neutral-200 py-24">
         <div className="mx-auto max-w-3xl px-6">
           <h2 className="mb-8 text-3xl font-medium text-neutral-900">Geen druk, geen verplichting</h2>
-          <div className="space-y-4 text-neutral-600">
-            <p>U hoeft niets voor te bereiden.</p>
-            <p>Er is geen verkooppraatje en geen haast om te beslissen.</p>
-            <p>Kijken, vergelijken, nog een ronde lopen. Alles is goed.</p>
+          <div className="grid gap-4 text-neutral-700 md:grid-cols-3">
+            {[
+              "U hoeft niets voor te bereiden.",
+              "Er is geen verkooppraatje en geen haast om te beslissen.",
+              "Kijken, vergelijken, nog een ronde lopen. Alles is goed.",
+            ].map((item) => (
+              <article key={item} className="rounded-2xl border border-neutral-200 bg-white p-6 text-sm leading-relaxed">
+                {item}
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -67,17 +73,19 @@ export default function UwBezoekPage() {
       <section className="border-b border-neutral-200 bg-[#F7F4EE] py-24">
         <div className="mx-auto max-w-3xl px-6">
           <h2 className="mb-8 text-3xl font-medium text-neutral-900">Praktische details</h2>
-          <div className="space-y-4 text-neutral-700">
-            <p>
-              <span className="font-medium text-neutral-900">Tijd:</span> meestal 60 tot 90 minuten.
-            </p>
-            <p>
-              <span className="font-medium text-neutral-900">Met wie:</span> alleen, met z&apos;n tweeën of met een klein gezelschap.
-            </p>
-            <p>
-              <span className="font-medium text-neutral-900">Locatie:</span> in Hengelo, goed bereikbaar via A1/A35 en ook
-              met het openbaar vervoer.
-            </p>
+          <div className="grid gap-4 text-neutral-700 md:grid-cols-3">
+            <article className="rounded-2xl border border-neutral-200 bg-white p-6 text-sm leading-relaxed">
+              <p className="font-medium text-neutral-900">Tijd</p>
+              <p className="mt-2">Meestal 60 tot 90 minuten.</p>
+            </article>
+            <article className="rounded-2xl border border-neutral-200 bg-white p-6 text-sm leading-relaxed">
+              <p className="font-medium text-neutral-900">Met wie</p>
+              <p className="mt-2">Alleen, met z&apos;n tweeën of met een klein gezelschap.</p>
+            </article>
+            <article className="rounded-2xl border border-neutral-200 bg-white p-6 text-sm leading-relaxed">
+              <p className="font-medium text-neutral-900">Locatie</p>
+              <p className="mt-2">In Hengelo, goed bereikbaar via A1/A35 en ook met het openbaar vervoer.</p>
+            </article>
           </div>
         </div>
       </section>

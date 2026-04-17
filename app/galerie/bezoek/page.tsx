@@ -17,7 +17,7 @@ export default function BezoekZonderChequePage() {
         subheadline="Ook dan bent u welkom. Maak eenvoudig een afspraak."
         primaryCta={{ label: "Plan uw bezoek", href: "/planner?context=bezoek" }}
       />
-      <section className="bg-creme pb-24">
+      <section className="bg-[#F7F4EE] py-20 lg:py-24">
         <div className="mx-auto max-w-narrow px-5 lg:px-8">
           <p className="text-[17px] leading-relaxed text-ink">
             Wij ontvangen ook bezoekers zonder Kunst-Waardecheque, vrijblijvend en op afspraak. U kiest zelf een dag

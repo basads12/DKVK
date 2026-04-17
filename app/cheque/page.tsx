@@ -111,7 +111,7 @@ export default async function ChequePage({ searchParams }: Props) {
           <blockquote className="rounded-2xl border border-border bg-creme p-6">
             <p className="text-base leading-relaxed text-ink md:text-[17px]">{`“${reviews.vanKesteren.quote}”`}</p>
             <cite className="mt-4 block text-sm not-italic text-muted">
-              — {reviews.vanKesteren.author}, {reviews.vanKesteren.city}
+              {reviews.vanKesteren.author} — {reviews.vanKesteren.city}
             </cite>
           </blockquote>
         </div>

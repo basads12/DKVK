@@ -165,7 +165,7 @@ export default function HomePage() {
                 </div>
                 <p className="text-sm leading-relaxed text-ink">{`“${review.quote}”`}</p>
                 <cite className="mt-4 block text-sm not-italic text-muted">
-                  — {review.author}, {review.city}
+                  {review.author} — {review.city}
                 </cite>
               </blockquote>
             ))}

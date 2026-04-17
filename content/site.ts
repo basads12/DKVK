@@ -26,19 +26,19 @@ export const reviews: Record<"vanKesteren" | "ponteyn" | "veldhuis", Review> = {
   vanKesteren: {
     quote:
       "Wij kwamen aarzelend aan, met een cheque in de brievenbus die we eerst niet vertrouwden. We werden ontvangen alsof we verwacht werden, met koffie en tijd. Er is niets aangeboden dat we niet wilden. We namen uiteindelijk een werk mee, maar het had net zo goed niet gehoeven.",
-    author: "Familie Van Kesteren",
+    author: "Jan en Annelies V.",
     city: "Ermelo",
   },
   ponteyn: {
     quote:
       "Twee uur gereden, en geen moment spijt. De galerie was rustig op maandagochtend. We hebben op ons tempo gekeken en gesproken. Mijn man komt normaal nooit in een galerie, maar had het thuis nog steeds over hoe prettig het was.",
-    author: "Familie Ponteyn",
+    author: "Robert en Marieke P.",
     city: "Hilversum",
   },
   veldhuis: {
     quote:
       "Wat ons opviel: geen druk. Niemand die achter je aan loopt. U krijgt koffie en u kijkt. Pas toen wij er zelf naar vroegen, werd er over prijzen gesproken. Dat voelde eerlijk en rustig.",
-    author: "Dhr. en mw. Veldhuis",
+    author: "Hans en Ineke V.",
     city: "Borne",
   },
 };

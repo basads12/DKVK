@@ -66,6 +66,10 @@ export default async function ChequePage({ searchParams }: Props) {
               </ul>
             </div>
           ) : null}
+          <p className="mt-6 text-sm leading-relaxed text-ink md:text-base">
+            Een Kunst-Waardecheque is een uitnodiging voor een middag in onze galerie, cadeau gedaan door een van onze
+            partners. Geen tegoed, geen aankoopverplichting - alleen tijd, koffie en aandacht.
+          </p>
           <div className="mt-6">
             <ChequeForm code={params.code} />
           </div>

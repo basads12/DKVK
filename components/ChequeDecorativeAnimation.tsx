@@ -9,7 +9,7 @@ export function ChequeDecorativeAnimation() {
     const video = videoRef.current;
     if (!video) return;
     const setSlowerPlayback = () => {
-      video.playbackRate = 0.6;
+      video.playbackRate = 0.35;
     };
     setSlowerPlayback();
     video.addEventListener("loadedmetadata", setSlowerPlayback);
@@ -24,13 +24,12 @@ export function ChequeDecorativeAnimation() {
       loop
       playsInline
       preload="metadata"
-      poster="/Video/web/vrouw-met-schilderij-poster.png?v=2"
+      poster="/Video/web/vrouw-met-schilderij-poster.png?v=3"
       role="img"
       aria-label="Een vrouw houdt een doek vast waarop werken uit de galerie verschijnen."
       className="h-auto w-full"
     >
-      <source src="/Video/web/vrouw-met-schilderij.webm?v=2" type="video/webm" />
-      <source src="/Video/web/vrouw-met-schilderij-alpha.mp4?v=2" type='video/mp4; codecs="hvc1"' />
+      <source src="/Video/web/vrouw-met-schilderij.webm?v=3" type="video/webm" />
     </video>
   );
 }

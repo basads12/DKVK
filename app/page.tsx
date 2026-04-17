@@ -68,7 +68,7 @@ export default function HomePage() {
               Uw cheque is een uitnodiging voor rust, koffie en aandacht. Sinds 2005 ontvangen wij bezoekers persoonlijk,
               zonder druk en zonder verplichting om iets te kopen.
             </p>
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
+            <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
               <Link
                 href="/cheque"
                 className="inline-flex min-h-12 items-center justify-center rounded-md bg-gold px-6 text-sm font-semibold text-ink transition-colors hover:bg-[#d08a43]"
@@ -244,7 +244,7 @@ export default function HomePage() {
                 Activeer uw cheque in twee stappen en kies daarna een moment dat bij u past. Wij zorgen voor koffie, tijd en
                 een persoonlijke ontvangst.
               </p>
-              <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              <div className="mt-7 flex flex-col items-start gap-3 sm:flex-row sm:items-center">
                 <Link
                   href="/cheque"
                   className="inline-flex min-h-12 items-center justify-center rounded-md bg-gold px-6 text-sm font-semibold text-ink transition-colors hover:bg-[#d08a43]"

@@ -46,7 +46,7 @@ export default async function ChequePage({ searchParams }: Props) {
                   : "Vul uw chequenummer en postcode in. In twee velden weet u of het klopt."}
               </p>
             </div>
-            <div className="relative order-1 aspect-[4/5] max-w-40 overflow-hidden rounded-2xl border border-border bg-sand lg:order-2 lg:ml-auto lg:max-w-none">
+            <div className="order-1 w-full max-w-[280px] lg:order-2 lg:ml-auto lg:max-w-[360px]">
               <video
                 autoPlay
                 muted
@@ -56,9 +56,10 @@ export default async function ChequePage({ searchParams }: Props) {
                 poster="/Video/web/vrouw-met-schilderij-poster.png"
                 role="img"
                 aria-label="Een vrouw houdt een doek vast waarop werken uit de galerie verschijnen."
-                className="h-full w-full rounded-lg object-cover"
+                className="h-auto w-full"
               >
-                <source src="/Video/web/vrouw-met-schilderij.mp4" type="video/mp4" />
+                <source src="/Video/web/vrouw-met-schilderij.webm" type="video/webm" />
+                <source src="/Video/web/vrouw-met-schilderij-alpha.mp4" type="video/mp4; codecs=hvc1" />
               </video>
             </div>
           </div>

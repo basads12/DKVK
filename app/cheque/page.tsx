@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { CtaBlock } from "@/components/CtaBlock";
 import { ChequeForm } from "@/components/ChequeForm";
 import { FaqList } from "@/components/FaqList";
 import { JsonLd } from "@/components/JsonLd";
@@ -33,7 +32,7 @@ export default async function ChequePage({ searchParams }: Props) {
 
   return (
     <>
-      <section className="bg-creme py-12 lg:py-28">
+      <section className="bg-white py-20 lg:py-28">
         <div className="mx-auto max-w-narrow px-5 lg:px-8">
           <h1 className="text-[44px] font-light text-bordeaux lg:text-[72px]">
             {params.code ? "Uw persoonlijke uitnodiging." : "Uw cheque."}
@@ -43,7 +42,14 @@ export default async function ChequePage({ searchParams }: Props) {
               ? "In onze galerie in Hengelo, op een dag die u uitkomt."
               : "Vul uw chequenummer en postcode in. In twee velden weet u of het klopt."}
           </p>
-          <div className="mt-10">
+          {!params.code ? (
+            <ul className="mt-8 space-y-2 text-sm text-muted">
+              <li>Binnen enkele seconden weet u waar u aan toe bent</li>
+              <li>Geen verplichtingen</li>
+              <li>Direct door naar uw bezoekmoment</li>
+            </ul>
+          ) : null}
+          <div className="mt-6">
             <ChequeForm code={params.code} />
           </div>
           <p className="mt-8 text-base leading-relaxed text-ink">
@@ -57,7 +63,7 @@ export default async function ChequePage({ searchParams }: Props) {
         </div>
       </section>
 
-      <section className="bg-sand py-12 lg:py-20">
+      <section className="bg-[#F7F4EE] py-20 lg:py-24">
         <div className="mx-auto max-w-narrow px-5 lg:px-8">
           <blockquote>
             <p className="text-[17px] leading-relaxed text-ink">{`“${reviews.vanKesteren.quote}”`}</p>
@@ -67,13 +73,6 @@ export default async function ChequePage({ searchParams }: Props) {
           </blockquote>
         </div>
       </section>
-
-      <CtaBlock
-        heading="Wat u kunt verwachten."
-        subheading="Ontvangst, koffie of thee, en rust om rond te kijken."
-        primary={{ label: "Plan uw middag", href: "/planner" }}
-        secondary={{ label: "Lees meer over uw bezoek", href: "/uw-bezoek" }}
-      />
 
       {!params.code ? <FaqList heading="Veelgestelde vragen" items={faq.cheque} /> : null}
       {!params.code ? <JsonLd data={faqJsonLd(faq.cheque)} /> : null}

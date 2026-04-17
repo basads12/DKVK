@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { TrustSignals } from "@/components/TrustSignals";
 
 type CtaBlockProps = {
   heading: string;
@@ -9,7 +10,7 @@ type CtaBlockProps = {
 
 export function CtaBlock({ heading, subheading, primary, secondary }: CtaBlockProps) {
   return (
-    <section className="bg-creme py-12 lg:py-28">
+    <section className="bg-white py-20 lg:py-28">
       <div className="mx-auto max-w-narrow px-5 text-left lg:px-8">
         <h2 className="text-[32px] font-light text-bordeaux lg:text-[48px]">{heading}</h2>
         <p className="mt-4 text-lg text-ink">{subheading}</p>
@@ -29,6 +30,7 @@ export function CtaBlock({ heading, subheading, primary, secondary }: CtaBlockPr
             </Link>
           ) : null}
         </div>
+        <TrustSignals className="mt-5" />
       </div>
     </section>
   );

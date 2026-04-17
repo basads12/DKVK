@@ -21,7 +21,7 @@ export default function HomePage() {
     <>
       <Hero
         headline="Een middag voor u geregeld."
-        subheadline="In onze galerie in Hengelo, op een dag die u uitkomt."
+        subheadline="In Hengelo. Op een dag die u uitkomt."
         primaryCta={{ label: "Activeer uw cheque", href: "/cheque" }}
         secondaryCta={{ label: "Lees wat u kunt verwachten", href: "/uw-bezoek" }}
       />
@@ -29,41 +29,43 @@ export default function HomePage() {
       <ThreeSteps
         eyebrow="DE WEG NAAR UW MIDDAG"
         heading="In drie stappen bent u binnen."
-        subheading="Eenvoudig, en u kunt op elk moment stoppen."
+        subheading="Drie korte stappen. Daarna staat de koffie klaar."
         steps={[
           {
             title: "Activeren",
-            body: "U controleert uw cheque met twee velden: chequenummer en postcode.",
+            body: "Vul chequenummer en postcode in. Binnen een minuut weet u of alles klopt.",
           },
           {
             title: "Plannen",
-            body: "U kiest een dag en tijd die u schikt. Een middag duurt 45 tot 90 minuten.",
+            body: "Kies dag en tijd. Meestal bent u 45 tot 90 minuten bij ons.",
           },
           {
             title: "Komen",
-            body: "U wordt ontvangen, krijgt koffie of thee, en kijkt rustig rond.",
+            body: "Bel aan, pak een kop koffie of thee, en kijk op uw eigen tempo rond.",
           },
         ]}
       />
 
-      <section className="bg-creme py-12 lg:py-28">
+      <section className="bg-white py-20 lg:py-28">
         <div className="mx-auto max-w-narrow px-5 lg:px-8">
           <p className="text-xs font-medium uppercase tracking-[0.14em] text-gold">OVER ONS</p>
           <h2 className="mt-2 text-[32px] font-light text-bordeaux lg:text-[48px]">
             Een galerie in Hengelo, sinds 2005.
           </h2>
-          <div className="mt-6 space-y-5 text-[17px] leading-relaxed text-ink">
-            <p>
-              Wij ontvangen bezoek uitsluitend op afspraak. Dat doen we al twintig jaar, op dezelfde plek in
-              Hengelo.
-            </p>
-            <p>
-              Onze ruimte is rustig en verzorgd, met tijd voor een gesprek. U krijgt de galerie voor u alleen, of
-              nagenoeg.
-            </p>
-            <p>
-              Wij werken met een kleine groep kunstenaars die wij goed kennen. Geen haast, geen druk.
-            </p>
+          <div className="mt-8 grid gap-5">
+            {[
+              "Wij werken op afspraak. Al twintig jaar, op dezelfde plek in Hengelo.",
+              "U stapt een rustige ruimte in met licht, stilte en tijd voor een gesprek.",
+              "Vaak bent u hier alleen, soms met nog een enkel ander gezelschap.",
+              "We tonen werk van een kleine groep kunstenaars die we door en door kennen.",
+            ].map((benefit) => (
+              <article
+                key={benefit}
+                className="rounded-2xl border border-border bg-[#F7F4EE] p-6 text-[17px] leading-relaxed text-ink"
+              >
+                {benefit}
+              </article>
+            ))}
           </div>
           <Link href="/galerie" className="mt-8 inline-block text-base text-ink underline underline-offset-4">
             Meer over de galerie
@@ -81,13 +83,13 @@ export default function HomePage() {
       <DarkAnchor
         heading={`${siteConfig.address.street}, ${siteConfig.address.city}.`}
         subheading={siteConfig.appointmentOnly}
-        body="Sinds 2005 ontvangen wij bezoek in Hengelo, Overijssel. Wij werken op afspraak, zodat u de ruimte voor u alleen of nagenoeg alleen heeft."
+        body="Sinds 2005 ontvangen we bezoekers in Hengelo. Op afspraak, zodat u rustig kunt kijken met de ruimte bijna helemaal voor uzelf."
         cta={{ label: "Activeer uw cheque", href: "/cheque" }}
       />
 
       <CtaBlock
         heading="Een middag voor u geregeld."
-        subheading="Op een dag die u uitkomt."
+        subheading="U kiest de dag. Wij regelen de rest."
         primary={{ label: "Activeer uw cheque", href: "/cheque" }}
         secondary={{ label: "Lees wat u kunt verwachten", href: "/uw-bezoek" }}
       />

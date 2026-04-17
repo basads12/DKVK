@@ -26,7 +26,7 @@ export default function ContactPage() {
         secondaryCta={{ label: "Maak afspraak zonder cheque", href: "/galerie/bezoek" }}
       />
 
-      <section className="bg-creme py-12 lg:py-20">
+      <section className="bg-white py-20 lg:py-24">
         <div className="mx-auto max-w-default px-5 lg:px-8">
           <h2 className="text-[32px] font-light text-bordeaux lg:text-[48px]">Waar u ons vindt.</h2>
           <address className="mt-6 not-italic text-[17px] leading-relaxed text-ink">
@@ -45,9 +45,12 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="bg-sand py-12 lg:py-20">
+      <section className="bg-[#F7F4EE] py-20 lg:py-24">
         <div className="mx-auto max-w-default px-5 lg:px-8">
           <h2 className="text-[32px] font-light text-bordeaux lg:text-[48px]">Bel of mail gerust.</h2>
+          <p className="mt-4 max-w-2xl text-[17px] leading-relaxed text-ink">
+            Stelt u liever eerst een vraag? Dat kan kort en zonder verplichting.
+          </p>
           <p className="mt-6 text-[17px] text-ink">
             <a href="tel:+31740000000" className="underline underline-offset-4 hover:text-bordeaux">
               {siteConfig.phone}
@@ -61,12 +64,11 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="bg-creme py-12 lg:py-20">
+      <section className="bg-white py-20 lg:py-24">
         <div className="mx-auto max-w-default px-5 lg:px-8">
           <h2 className="text-[32px] font-light text-bordeaux lg:text-[48px]">Route.</h2>
           <p className="mt-4 max-w-2xl text-[17px] leading-relaxed text-ink">
-            Met de auto rijdt u via de A1 of A35 naar Hengelo. Parkeren kan gratis in de straat, meestal direct voor
-            de deur.
+            U rijdt via de A1 of A35 naar Hengelo. Parkeren is gratis in de straat, vaak direct voor de deur.
           </p>
           <div className="mt-8">
             <LazyMap />
@@ -76,7 +78,7 @@ export default function ContactPage() {
               href="https://maps.google.com/?q=Hengelo+Overijssel"
               className="text-ink underline underline-offset-4 hover:text-bordeaux"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               Open in Google Maps
             </a>
@@ -87,7 +89,7 @@ export default function ContactPage() {
       <DarkAnchor
         heading="Uitsluitend op afspraak."
         subheading="Elke dag mogelijk, behalve zondag."
-        body="Wij werken op afspraak zodat u altijd verwacht wordt. Voor uw middag reserveren wij een dagdeel."
+        body="Wij plannen per afspraak een dagdeel. Zo wordt u verwacht en heeft u alle tijd."
         cta={{ label: "Activeer uw cheque", href: "/cheque" }}
       />
 
@@ -98,7 +100,7 @@ export default function ContactPage() {
         secondary={{ label: "Maak een afspraak zonder cheque", href: "/galerie/bezoek" }}
       />
 
-      <section className="bg-creme pb-20">
+      <section className="bg-[#F7F4EE] py-20">
         <div className="mx-auto max-w-narrow px-5 lg:px-8">
           <Link href="/privacy" className="text-ink underline underline-offset-4 hover:text-bordeaux">
             Bekijk onze privacyverklaring

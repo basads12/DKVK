@@ -3,14 +3,15 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { FormField } from "@/components/FormField";
+import { TrustSignals } from "@/components/TrustSignals";
 
 type Step = 1 | 2 | 3 | 4 | 5;
 
 const days = [
-  { id: "maandag", label: "Maandag", note: "Onze rustigste dag. De galerie is nagenoeg leeg." },
-  { id: "donderdag", label: "Donderdag", note: "Rustig, met ruime tijd voor een gesprek." },
+  { id: "maandag", label: "Maandag", note: "Rustig. Veel ruimte om op uw gemak te kijken." },
+  { id: "donderdag", label: "Donderdag", note: "Balans. Levendig, maar met voldoende rust." },
   { id: "vrijdag", label: "Vrijdag", note: "Rustig en gelijkmatig ingepland." },
-  { id: "zaterdag", label: "Zaterdag", note: "Bijna vol." },
+  { id: "zaterdag", label: "Zaterdag", note: "Drukker. Meer bezoekers en meer energie in de galerie." },
 ];
 
 const times = [
@@ -78,11 +79,13 @@ export function PlannerClient() {
             Stap {step} van 4
           </p>
         ) : null}
+        <p className="mt-3 text-lg text-ink">U kiest nu een moment. De rest regelen wij.</p>
 
         {step === 1 ? (
           <div className="mt-5 space-y-6">
             <h1 className="text-[40px] font-light text-bordeaux lg:text-[56px]">Welke dag schikt u?</h1>
-            <p className="text-lg text-ink">Een middag duurt 45 tot 90 minuten.</p>
+            <p className="text-lg text-ink">Kies de sfeer die past bij uw bezoek.</p>
+            <p className="text-sm text-muted">u kunt dit later aanpassen</p>
             <ul className="space-y-3">
               {days.map((item) => (
                 <li key={item.id}>
@@ -105,7 +108,8 @@ export function PlannerClient() {
         {step === 2 ? (
           <div className="mt-5 space-y-6">
             <h1 className="text-[40px] font-light text-bordeaux lg:text-[56px]">Hoe laat schikt het?</h1>
-            <p className="text-lg text-ink">Wij reserveren het dagdeel volledig voor u.</p>
+            <p className="text-lg text-ink">Kies het moment dat het beste in uw ritme past.</p>
+            <p className="text-sm text-muted">u kunt dit later aanpassen</p>
             <ul className="space-y-3">
               {times.map((item) => (
                 <li key={item.id}>
@@ -127,7 +131,8 @@ export function PlannerClient() {
         {step === 3 ? (
           <div className="mt-5 space-y-6">
             <h1 className="text-[40px] font-light text-bordeaux lg:text-[56px]">Uw gegevens.</h1>
-            <p className="text-lg text-ink">Alleen wat wij nodig hebben om u te ontvangen.</p>
+            <p className="text-lg text-ink">Alleen de gegevens die nodig zijn voor uw ontvangst.</p>
+            <p className="text-sm text-muted">u kunt dit later aanpassen</p>
             <div className="space-y-5">
               <FormField
                 id="firstName"
@@ -174,6 +179,9 @@ export function PlannerClient() {
                 onChange={(event) => setForm((prev) => ({ ...prev, postcode: event.target.value }))}
               />
             </div>
+            <p className="rounded-sm border border-border bg-sand p-3 text-sm text-ink">
+              We gebruiken deze gegevens alleen voor uw afspraak en bevestiging.
+            </p>
             <p className="text-sm text-muted">
               Uw gegevens worden niet gedeeld. Zie onze{" "}
               <Link href="/privacy" className="underline underline-offset-4 hover:text-bordeaux">
@@ -187,7 +195,8 @@ export function PlannerClient() {
         {step === 4 ? (
           <div className="mt-5 space-y-6">
             <h1 className="text-[40px] font-light text-bordeaux lg:text-[56px]">Klopt het zo?</h1>
-            <p className="text-lg text-ink">Nog één controle, dan leggen wij uw afspraak vast.</p>
+            <p className="text-lg text-ink">Controleer rustig alles voordat wij uw moment vastleggen.</p>
+            <p className="text-sm text-muted">u kunt dit later aanpassen</p>
             <dl className="space-y-3 rounded-sm border border-border bg-sand p-5">
               <div className="flex justify-between gap-4">
                 <dt className="text-muted">Datum</dt>
@@ -231,7 +240,8 @@ export function PlannerClient() {
 
         {step <= 4 ? (
           <div className="fixed inset-x-0 bottom-0 z-30 border-t border-border bg-creme p-4 lg:static lg:mt-8 lg:border-0 lg:bg-transparent lg:p-0">
-            <div className="mx-auto flex max-w-narrow gap-3">
+            <div className="mx-auto max-w-narrow">
+              <div className="flex gap-3">
               {step > 1 ? (
                 <button
                   type="button"
@@ -248,6 +258,8 @@ export function PlannerClient() {
               >
                 {step === 3 ? "Bevestigen" : step === 4 ? "Afspraak vastleggen" : "Volgende"}
               </button>
+              </div>
+              <TrustSignals className="mt-3" />
             </div>
           </div>
         ) : null}

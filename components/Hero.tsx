@@ -10,7 +10,7 @@ type HeroProps = {
 
 export function Hero({ kicker, headline, subheadline, primaryCta, secondaryCta }: HeroProps) {
   return (
-    <section className="bg-creme py-12 lg:py-28">
+    <section className="bg-white py-20 lg:py-28">
       <div className="mx-auto max-w-wide px-5 lg:px-8">
         {kicker ? (
           <p className="text-xs font-medium uppercase tracking-[0.14em] text-gold">{kicker}</p>

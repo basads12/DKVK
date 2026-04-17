@@ -9,18 +9,21 @@ type ReviewsListProps = {
 
 export function ReviewsList({ eyebrow, heading, subheading, items }: ReviewsListProps) {
   return (
-    <section className="bg-sand py-12 lg:py-28">
+    <section className="bg-[#F7F4EE] py-20 lg:py-28">
       <div className="mx-auto max-w-default px-5 lg:px-8">
         {eyebrow ? (
           <p className="text-xs font-medium uppercase tracking-[0.14em] text-gold">{eyebrow}</p>
         ) : null}
         <h2 className="mt-2 text-[32px] font-light text-bordeaux lg:text-[48px]">{heading}</h2>
         {subheading ? <p className="mt-4 text-lg text-ink">{subheading}</p> : null}
-        <div className="mx-auto mt-10 max-w-narrow space-y-12 lg:space-y-16">
+        <div className="mx-auto mt-10 max-w-narrow space-y-6">
           {items.map((review) => (
-            <blockquote key={review.author} className="space-y-4">
+            <blockquote
+              key={review.author}
+              className="rounded-2xl border border-border bg-white p-6 shadow-[0_8px_24px_rgba(26,23,19,0.06)] lg:p-8"
+            >
               <p className="text-[17px] leading-relaxed text-ink lg:text-[19px]">{`“${review.quote}”`}</p>
-              <cite className="block text-sm not-italic text-muted">
+              <cite className="mt-4 block text-sm not-italic text-muted">
                 — {review.author}, {review.city}
               </cite>
             </blockquote>

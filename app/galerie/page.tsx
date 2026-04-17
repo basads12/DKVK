@@ -22,26 +22,26 @@ export default function GaleriePage() {
       <Hero
         kicker="SINDS 2005 IN HENGELO"
         headline="De galerie."
-        subheadline="Een kleine ruimte, een kleine groep kunstenaars, een vaste gewoonte."
+        subheadline="Een lichte ruimte. Een kleine groep kunstenaars. Een vaste gewoonte sinds 2005."
         primaryCta={{ label: "Activeer uw cheque", href: "/cheque" }}
         secondaryCta={{ label: "Maak een afspraak zonder cheque", href: "/galerie/bezoek" }}
       />
 
-      <section className="bg-creme py-12 lg:py-28">
+      <section className="bg-white py-20 lg:py-28">
         <div className="mx-auto max-w-narrow space-y-6 px-5 lg:px-8">
           <p className="text-xs font-medium uppercase tracking-[0.14em] text-gold">WIE WIJ ZIJN</p>
           <h2 className="text-[32px] font-light text-bordeaux lg:text-[48px]">Sinds 2005 in Hengelo.</h2>
+          <p className="text-[17px] leading-relaxed text-ink">We begonnen met een simpel idee: kijken zonder haast.</p>
           <p className="text-[17px] leading-relaxed text-ink">
-            Wij begonnen met één idee: een galerie waar mensen op afspraak langskomen, koffie krijgen en rustig
-            kunnen kijken. Die gewoonte is gebleven.
+            Daarom werken we op afspraak, schenken we koffie en nemen we de tijd.
           </p>
           <p className="text-[17px] leading-relaxed text-ink">
-            We werken met een kleine groep kunstenaars die we al jaren kennen. Dat geeft rust en duidelijkheid.
+            We tonen werk van een kleine groep kunstenaars die we al jaren volgen en kennen.
           </p>
         </div>
       </section>
 
-      <section id="team" className="bg-sand py-12 lg:py-20">
+      <section id="team" className="bg-[#F7F4EE] py-20 lg:py-24">
         <div className="mx-auto max-w-default px-5 lg:px-8">
           <p className="text-xs font-medium uppercase tracking-[0.14em] text-gold">WIE U ONTVANGT</p>
           <h2 className="mt-2 text-[32px] font-light text-bordeaux lg:text-[48px]">Het team.</h2>
@@ -66,13 +66,13 @@ export default function GaleriePage() {
         cta={{ label: "Bekijk de route", href: "/contact" }}
       />
 
-      <section id="kunstenaars" className="bg-creme py-12 lg:py-20">
+      <section id="kunstenaars" className="bg-white py-20 lg:py-24">
         <div className="mx-auto max-w-default px-5 lg:px-8">
           <p className="text-xs font-medium uppercase tracking-[0.14em] text-gold">DE MAKERS</p>
           <h2 className="mt-2 text-[32px] font-light text-bordeaux lg:text-[48px]">Onze kunstenaars.</h2>
           <p className="mt-4 max-w-2xl text-[17px] leading-relaxed text-ink">
-            Een klein aantal, langdurig. Dat betekent dat we het werk goed kennen en er rustig uitleg bij kunnen
-            geven als u dat wilt.
+            Geen lange lijst namen, maar een kleine selectie. Daardoor kunnen we u precies vertellen hoe een werk is
+            opgebouwd, waarom het klopt en wat u op afstand soms mist.
           </p>
           <ArtistsAccordion />
         </div>
@@ -87,7 +87,7 @@ export default function GaleriePage() {
         secondary={{ label: "Maak een afspraak zonder cheque", href: "/galerie/bezoek" }}
       />
 
-      <section className="bg-creme pb-20">
+      <section className="bg-[#F7F4EE] py-20">
         <div className="mx-auto max-w-narrow px-5 lg:px-8">
           <Link href="/contact" className="text-ink underline underline-offset-4 hover:text-bordeaux">
             Contact en route

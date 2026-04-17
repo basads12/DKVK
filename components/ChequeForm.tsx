@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { FormEvent, useMemo, useState } from "react";
 import { FormField } from "@/components/FormField";
-import { partners } from "@/content/site";
+import { TrustSignals } from "@/components/TrustSignals";
+import { partners, reviews } from "@/content/site";
 
 type ChequeFormProps = {
   code?: string;
@@ -45,6 +46,15 @@ export function ChequeForm({ code }: ChequeFormProps) {
         >
           Plan uw middag
         </Link>
+        <TrustSignals className="mt-4" />
+        <blockquote className="mt-5 rounded-sm border border-border bg-creme p-4">
+          <p className="text-sm leading-relaxed text-ink">
+            “We hebben op ons tempo gekeken en gesproken. Dat voelde prettig en rustig.”
+          </p>
+          <cite className="mt-2 block text-xs not-italic text-muted">
+            — {reviews.ponteyn.author}, {reviews.ponteyn.city}
+          </cite>
+        </blockquote>
       </div>
     );
   }
@@ -82,51 +92,65 @@ export function ChequeForm({ code }: ChequeFormProps) {
   };
 
   return (
-    <form onSubmit={onSubmit} className="space-y-6" noValidate>
-      <div aria-live="polite">
-        {errors.generic ? <p className="rounded-sm bg-[#F8EAE8] p-3 text-sm text-error">{errors.generic}</p> : null}
-        {success ? (
-          <p className="rounded-sm bg-[#EAF0E8] p-3 text-sm text-success">
-            Uw cheque is herkend. U kunt nu uw middag plannen.
-          </p>
-        ) : null}
-      </div>
-      <FormField
-        id="chequeNumber"
-        name="chequeNumber"
-        label="Chequenummer"
-        required
-        helper="U vindt het chequenummer rechtsonder op uw cheque."
-        autoComplete="off"
-        error={errors.chequeNumber}
-      />
-      <FormField
-        id="postcode"
-        name="postcode"
-        label="Postcode"
-        required
-        autoComplete="postal-code"
-        helper="Bijvoorbeeld 7555 AB."
-        error={errors.postcode}
-      />
-      <button
-        type="submit"
-        className="inline-flex min-h-14 w-full items-center justify-center rounded-md bg-bordeaux px-8 text-base font-medium text-creme transition-colors duration-200 ease-dkvk hover:bg-bordeaux-pressed lg:w-auto"
-      >
-        {loading ? "Controleren..." : success ? "Plan uw middag" : "Controleren"}
-      </button>
+    <div className="rounded-md border border-border bg-creme p-6 shadow-sm">
+      <form onSubmit={onSubmit} className="space-y-6" noValidate>
+        <div aria-live="polite">
+          {errors.generic ? <p className="rounded-sm bg-[#F8EAE8] p-3 text-sm text-error">{errors.generic}</p> : null}
+        </div>
+        <FormField
+          id="chequeNumber"
+          name="chequeNumber"
+          label="Chequenummer"
+          required
+          helper="U vindt het chequenummer rechtsonder op uw cheque."
+          autoComplete="off"
+          error={errors.chequeNumber}
+        />
+        <FormField
+          id="postcode"
+          name="postcode"
+          label="Postcode"
+          required
+          autoComplete="postal-code"
+          helper="Bijvoorbeeld 7555 AB."
+          error={errors.postcode}
+        />
+        <p className="rounded-sm border border-border bg-sand p-3 text-sm text-ink">
+          We gebruiken deze invoer alleen om uw cheque te herkennen.
+        </p>
+        <button
+          type="submit"
+          className="inline-flex min-h-14 w-full items-center justify-center rounded-md bg-bordeaux px-8 text-base font-medium text-creme transition-colors duration-200 ease-dkvk hover:bg-bordeaux-pressed lg:w-auto"
+        >
+          {loading ? "Controleer uw cheque..." : "Controleer uw cheque"}
+        </button>
+        <TrustSignals />
+        <p className="text-sm text-muted">
+          Wij gebruiken uw gegevens uitsluitend om uw cheque te herkennen. Zie onze{" "}
+          <Link href="/privacy" className="underline underline-offset-4 hover:text-bordeaux">
+            privacyverklaring
+          </Link>
+          .
+        </p>
+      </form>
       {success ? (
-        <Link className="block text-base text-ink underline underline-offset-4 hover:text-bordeaux" href="/planner">
-          Plan uw middag
-        </Link>
+        <div className="mt-4 space-y-3">
+          <p className="rounded-sm bg-[#EAF0E8] p-3 text-sm text-success">
+            Uw cheque is herkend → kies nu rustig een moment
+          </p>
+          <Link className="block text-base text-ink underline underline-offset-4 hover:text-bordeaux" href="/planner">
+            Plan uw middag
+          </Link>
+          <blockquote className="rounded-sm border border-border bg-sand p-4">
+            <p className="text-sm leading-relaxed text-ink">
+              “Er is niets opgedrongen. We werden rustig ontvangen met koffie en tijd.”
+            </p>
+            <cite className="mt-2 block text-xs not-italic text-muted">
+              — {reviews.vanKesteren.author}, {reviews.vanKesteren.city}
+            </cite>
+          </blockquote>
+        </div>
       ) : null}
-      <p className="text-sm text-muted">
-        Wij gebruiken uw gegevens uitsluitend om uw cheque te herkennen. Zie onze{" "}
-        <Link href="/privacy" className="underline underline-offset-4 hover:text-bordeaux">
-          privacyverklaring
-        </Link>
-        .
-      </p>
-    </form>
+    </div>
   );
 }

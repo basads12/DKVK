@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { FormEvent, useState } from "react";
 import { FormField } from "@/components/FormField";
+import { TrustSignals } from "@/components/TrustSignals";
 
 const knownPaintings = [
   { paintingNumber: "DKVK-4012", postcode: "7551HT" },
@@ -51,12 +52,16 @@ export function OmruilForm() {
         helper="Dit nummer vindt u op het certificaat bij uw schilderij."
       />
       <FormField id="postcode" name="postcode" label="Postcode" required autoComplete="postal-code" />
+      <p className="rounded-sm border border-border bg-sand p-3 text-sm text-ink">
+        Deze gegevens gebruiken we alleen om uw schilderij te controleren.
+      </p>
       <button
         type="submit"
         className="inline-flex min-h-14 w-full items-center justify-center rounded-md bg-bordeaux px-8 text-base font-medium text-creme transition-colors duration-200 ease-dkvk hover:bg-bordeaux-pressed lg:w-auto"
       >
         Controleren
       </button>
+      <TrustSignals />
       {message?.type === "success" ? (
         <Link href="/planner?context=omruil" className="block text-base text-ink underline underline-offset-4">
           Plan uw afspraak

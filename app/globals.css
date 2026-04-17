@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  background: #f5f0e8;
+  background: #ffffff;
   color: #1a1713;
   font-family:
     "Helvetica Neue",
@@ -21,6 +21,10 @@ body {
     Arial,
     sans-serif;
   line-height: 1.65;
+}
+
+main > section + section {
+  border-top: 1px solid #e3dcce;
 }
 
 .skip-link {

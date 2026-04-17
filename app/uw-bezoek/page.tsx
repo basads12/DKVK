@@ -1,72 +1,101 @@
 import Link from "next/link";
-import { CtaBlock } from "@/components/CtaBlock";
-import { DarkAnchor } from "@/components/DarkAnchor";
-import { FaqList } from "@/components/FaqList";
-import { Hero } from "@/components/Hero";
-import { JsonLd } from "@/components/JsonLd";
-import { ReviewsList } from "@/components/ReviewsList";
-import { faq, reviews, siteConfig } from "@/content/site";
-import { faqJsonLd, pageMetadata } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
   title: "Wat u kunt verwachten bij uw bezoek — Galerie De Kunst van Kunst",
   description:
-    "Een persoonlijke middag in onze galerie in Hengelo. Ontvangst, koffie, rust. U kiest zelf of u iets meeneemt, niets moet.",
+    "Een persoonlijke middag in onze galerie in Hengelo. Rustig welkom, koffie, tijd om te kijken. U kiest zelf of u iets meeneemt.",
   path: "/uw-bezoek",
 });
 
 export default function UwBezoekPage() {
   return (
-    <>
-      <Hero
-        kicker="BIJ DKVK"
-        headline="Uw bezoek."
-        subheadline="U komt rustig kijken. Wij nemen de rest op ons."
-        primaryCta={{ label: "Activeer uw cheque", href: "/cheque" }}
-        secondaryCta={{ label: "Plan uw middag", href: "/planner" }}
-      />
-
-      <section className="bg-creme py-12 lg:py-28">
-        <div className="mx-auto max-w-narrow space-y-8 px-5 lg:px-8">
-          <div>
-            <p className="text-xs font-medium uppercase tracking-[0.14em] text-gold">UW MIDDAG</p>
-            <h2 className="mt-2 text-[32px] font-light text-bordeaux lg:text-[48px]">Wat u kunt verwachten.</h2>
+    <main className="bg-white text-neutral-900">
+      <section className="border-b border-neutral-200 py-28">
+        <div className="mx-auto max-w-3xl px-6 text-center">
+          <p className="mb-4 text-sm uppercase tracking-[0.12em] text-neutral-500">Uw bezoek</p>
+          <h1 className="mb-8 text-4xl font-medium leading-tight md:text-5xl">
+            Een rustig moment om kunst te ervaren, op uw tempo.
+          </h1>
+          <div className="mx-auto max-w-2xl space-y-4 text-lg text-neutral-600">
+            <p>U komt binnen, hangt uw jas op, en ademt even uit.</p>
+            <p>Wij zetten koffie of thee. Daarna bepaalt u het tempo.</p>
           </div>
-          <p className="text-[17px] leading-relaxed text-ink">
-            De ontvangst is persoonlijk. Geen balie en geen wachtruimte. Eerst koffie of thee, daarna kijkt u op uw
-            eigen tempo. Een middag duurt meestal 45 tot 90 minuten.
-          </p>
-          <p className="text-[17px] leading-relaxed text-ink">
-            U bepaalt wat er gebeurt. U mag rustig rondkijken zonder druk. Veel bezoekers gaan naar huis met een
-            goede middag, ook als ze niets meenemen.
-          </p>
         </div>
       </section>
 
-      <ReviewsList heading="Wat familie Ponteyn zei." items={[reviews.ponteyn]} />
+      <section className="border-b border-neutral-200 bg-[#F7F4EE] py-24">
+        <div className="mx-auto max-w-4xl px-6">
+          <h2 className="mb-10 text-3xl font-medium text-neutral-900">Wat er gebeurt wanneer u aankomt</h2>
+          <div className="grid gap-6 md:grid-cols-3">
+            <div className="rounded-2xl bg-white p-7">
+              <p className="mb-2 text-sm text-neutral-500">1</p>
+              <h3 className="mb-3 text-lg font-medium">Persoonlijk welkom</h3>
+              <p className="text-sm leading-relaxed text-neutral-600">
+                We doen open, nemen uw jas aan en vragen wat u wilt drinken.
+              </p>
+            </div>
+            <div className="rounded-2xl bg-white p-7">
+              <p className="mb-2 text-sm text-neutral-500">2</p>
+              <h3 className="mb-3 text-lg font-medium">Korte afstemming</h3>
+              <p className="text-sm leading-relaxed text-neutral-600">
+                In een paar minuten horen we wat u mooi vindt en waar u juist niet van houdt.
+              </p>
+            </div>
+            <div className="rounded-2xl bg-white p-7">
+              <p className="mb-2 text-sm text-neutral-500">3</p>
+              <h3 className="mb-3 text-lg font-medium">Vrij rondkijken</h3>
+              <p className="text-sm leading-relaxed text-neutral-600">
+                Daarna loopt u vrij rond. Wij blijven dichtbij als u vragen heeft.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <DarkAnchor
-        heading="Waar u ons vindt."
-        subheading={siteConfig.appointmentOnly}
-        body={`${siteConfig.address.street}, ${siteConfig.address.postalCode} ${siteConfig.address.city}. Gratis parkeren in de straat. Sinds 2005 in Hengelo.`}
-        cta={{ label: "Bekijk de route", href: "/contact" }}
-      />
+      <section className="border-b border-neutral-200 py-24">
+        <div className="mx-auto max-w-3xl px-6">
+          <h2 className="mb-8 text-3xl font-medium text-neutral-900">Geen druk, geen verplichting</h2>
+          <div className="space-y-4 text-neutral-600">
+            <p>U hoeft niets voor te bereiden.</p>
+            <p>Er is geen verkooppraatje en geen haast om te beslissen.</p>
+            <p>Kijken, vergelijken, nog een ronde lopen. Alles is goed.</p>
+          </div>
+        </div>
+      </section>
 
-      <CtaBlock
-        heading="Een middag voor u geregeld."
-        subheading="Op een dag die u uitkomt."
-        primary={{ label: "Activeer uw cheque", href: "/cheque" }}
-        secondary={{ label: "Lees meer over de galerie", href: "/galerie" }}
-      />
-      <section className="bg-creme pb-20">
-        <div className="mx-auto max-w-narrow px-5 lg:px-8">
-          <Link href="/contact" className="text-ink underline underline-offset-4 hover:text-bordeaux">
-            Contact en route
+      <section className="border-b border-neutral-200 bg-[#F7F4EE] py-24">
+        <div className="mx-auto max-w-3xl px-6">
+          <h2 className="mb-8 text-3xl font-medium text-neutral-900">Praktische details</h2>
+          <div className="space-y-4 text-neutral-700">
+            <p>
+              <span className="font-medium text-neutral-900">Tijd:</span> meestal 60 tot 90 minuten.
+            </p>
+            <p>
+              <span className="font-medium text-neutral-900">Met wie:</span> alleen, met z&apos;n tweeën of met een klein gezelschap.
+            </p>
+            <p>
+              <span className="font-medium text-neutral-900">Locatie:</span> in Hengelo, goed bereikbaar via A1/A35 en ook
+              met het openbaar vervoer.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24">
+        <div className="mx-auto max-w-3xl px-6 text-center">
+          <h2 className="mb-6 text-3xl font-medium text-neutral-900">Plan uw bezoek wanneer het u past</h2>
+          <p className="mx-auto mb-10 max-w-xl text-neutral-600">
+            Kies een moment in de agenda. Wij bevestigen uw afspraak kort daarna.
+          </p>
+          <Link
+            href="/planner"
+            className="inline-flex rounded-md bg-[#7A1E2C] px-6 py-3 text-white transition-colors duration-200 hover:bg-[#5E1A26]"
+          >
+            Plan uw bezoek
           </Link>
         </div>
       </section>
-      <FaqList heading="Veelgestelde vragen" items={faq.visit} />
-      <JsonLd data={faqJsonLd(faq.visit)} />
-    </>
+    </main>
   );
 }

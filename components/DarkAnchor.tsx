@@ -1,3 +1,5 @@
+import { TrustSignals } from "@/components/TrustSignals";
+
 type DarkAnchorProps = {
   heading: string;
   subheading: string;
@@ -13,12 +15,18 @@ export function DarkAnchor({ heading, subheading, body, cta }: DarkAnchorProps) 
         <p className="mt-3 text-xl text-[#D8D0C1]">{subheading}</p>
         <p className="mt-6 max-w-2xl text-[17px] leading-relaxed text-creme">{body}</p>
         {cta ? (
-          <a
-            href={cta.href}
-            className="mt-8 inline-flex min-h-14 items-center justify-center rounded-md bg-bordeaux px-8 text-base font-medium text-creme transition-colors duration-200 ease-dkvk hover:bg-bordeaux-pressed focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-creme"
-          >
-            {cta.label}
-          </a>
+          <>
+            <a
+              href={cta.href}
+              className="mt-8 inline-flex min-h-14 items-center justify-center rounded-md bg-bordeaux px-8 text-base font-medium text-creme transition-colors duration-200 ease-dkvk hover:bg-bordeaux-pressed focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-creme"
+            >
+              {cta.label}
+            </a>
+            <TrustSignals
+              className="mt-4 text-[#D8D0C1]"
+              items={["Uitsluitend op afspraak", "U bepaalt het tempo", "Geen verplichting"]}
+            />
+          </>
         ) : null}
       </div>
     </section>

@@ -82,9 +82,9 @@ export default function GaleriePage() {
 
       <CtaBlock
         heading="Komt u langs?"
-        subheading="Op een dag die u uitkomt."
-        primary={{ label: "Activeer uw cheque", href: "/cheque" }}
-        secondary={{ label: "Maak een afspraak zonder cheque", href: "/galerie/bezoek" }}
+        subheading="Kies direct een rustig moment in de planner."
+        primary={{ label: "Plan uw bezoek", href: "/planner" }}
+        secondary={{ label: "Activeer eerst uw cheque", href: "/cheque" }}
       />
 
       <section className="bg-[#F7F4EE] py-20">

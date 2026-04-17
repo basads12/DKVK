@@ -24,7 +24,7 @@ export function CtaBlock({ heading, subheading, primary, secondary }: CtaBlockPr
           {secondary ? (
             <Link
               href={secondary.href}
-              className="inline-flex min-h-12 items-center text-base text-ink underline underline-offset-4 transition-colors duration-150 ease-dkvk hover:text-bordeaux"
+              className="inline-flex min-h-10 items-center text-sm text-muted underline underline-offset-4 transition-colors duration-150 ease-dkvk hover:text-bordeaux"
             >
               {secondary.label}
             </Link>

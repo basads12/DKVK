@@ -32,7 +32,7 @@ export function ChequeForm({ code }: ChequeFormProps) {
 
   if (code) {
     return (
-      <div className="rounded-md border border-border bg-sand p-6">
+      <div className="rounded-2xl border border-border bg-sand p-6 shadow-[0_8px_24px_rgba(26,23,19,0.06)]">
         <p className="text-sm uppercase tracking-[0.14em] text-gold">{`Namens ${partnerEntry?.name}`}</p>
         <h2 className="mt-3 text-2xl font-light text-bordeaux lg:text-[40px]">
           Beste bezoeker, {partnerEntry?.name} heeft een middag voor u gereserveerd.
@@ -44,7 +44,7 @@ export function ChequeForm({ code }: ChequeFormProps) {
           href="/planner"
           className="mt-8 inline-flex min-h-14 items-center justify-center rounded-md bg-bordeaux px-8 text-base font-medium text-creme transition-colors duration-200 ease-dkvk hover:bg-bordeaux-pressed"
         >
-          Plan uw middag
+          Kies uw moment
         </Link>
         <TrustSignals className="mt-4" />
         <blockquote className="mt-5 rounded-sm border border-border bg-creme p-4">
@@ -92,7 +92,7 @@ export function ChequeForm({ code }: ChequeFormProps) {
   };
 
   return (
-    <div className="rounded-md border border-border bg-creme p-6 shadow-sm">
+    <div className="rounded-2xl border border-border bg-creme p-6 shadow-[0_8px_24px_rgba(26,23,19,0.06)]">
       <form onSubmit={onSubmit} className="space-y-6" noValidate>
         <div aria-live="polite">
           {errors.generic ? <p className="rounded-sm bg-[#F8EAE8] p-3 text-sm text-error">{errors.generic}</p> : null}
@@ -134,13 +134,17 @@ export function ChequeForm({ code }: ChequeFormProps) {
         </p>
       </form>
       {success ? (
-        <div className="mt-4 space-y-3">
+        <div className="mt-5 space-y-4 rounded-xl border border-[#D4E3CF] bg-[#F4F8F2] p-5">
           <p className="rounded-sm bg-[#EAF0E8] p-3 text-sm text-success">
-            Uw cheque is herkend → kies nu rustig een moment
+            Uw cheque is herkend. Volgende stap: kies dag en tijd.
           </p>
-          <Link className="block text-base text-ink underline underline-offset-4 hover:text-bordeaux" href="/planner">
-            Plan uw middag
+          <Link
+            className="inline-flex min-h-12 items-center justify-center rounded-md bg-bordeaux px-6 text-sm font-medium text-creme transition-colors duration-200 ease-dkvk hover:bg-bordeaux-pressed"
+            href="/planner"
+          >
+            Ga door naar planner
           </Link>
+          <p className="text-sm text-muted">Duur: ongeveer 2 minuten. U kunt later altijd nog wijzigen.</p>
           <blockquote className="rounded-sm border border-border bg-sand p-4">
             <p className="text-sm leading-relaxed text-ink">
               “Er is niets opgedrongen. We werden rustig ontvangen met koffie en tijd.”

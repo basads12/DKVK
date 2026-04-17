@@ -43,11 +43,14 @@ export default async function ChequePage({ searchParams }: Props) {
               : "Vul uw chequenummer en postcode in. In twee velden weet u of het klopt."}
           </p>
           {!params.code ? (
-            <ul className="mt-8 space-y-2 text-sm text-muted">
-              <li>Binnen enkele seconden weet u waar u aan toe bent</li>
-              <li>Geen verplichtingen</li>
-              <li>Direct door naar uw bezoekmoment</li>
-            </ul>
+            <div className="mt-8 rounded-2xl border border-border bg-[#F7F4EE] p-5">
+              <p className="text-sm font-medium text-ink">Eerst rustig controleren, daarna pas plannen.</p>
+              <ul className="mt-3 space-y-2 text-sm text-muted">
+                <li>Binnen enkele seconden weet u waar u aan toe bent</li>
+                <li>Geen verplichtingen of betaalstappen</li>
+                <li>Na herkenning gaat u direct door naar de planner</li>
+              </ul>
+            </div>
           ) : null}
           <div className="mt-6">
             <ChequeForm code={params.code} />

@@ -26,7 +26,7 @@ export default function UwBezoekPage() {
 
       <section className="border-b border-neutral-200 bg-[#F7F4EE] py-24">
         <div className="mx-auto max-w-4xl px-6">
-          <h2 className="mb-10 text-3xl font-medium text-neutral-900">Wat er gebeurt wanneer u aankomt</h2>
+          <h2 className="mb-10 text-3xl font-medium text-neutral-900">Zo verloopt uw middag</h2>
           <div className="grid gap-6 md:grid-cols-3">
             <div className="rounded-2xl bg-white p-7">
               <p className="mb-2 text-sm text-neutral-500">1</p>
@@ -50,6 +50,9 @@ export default function UwBezoekPage() {
               </p>
             </div>
           </div>
+          <p className="mt-8 text-sm text-neutral-500">
+            Gemiddelde duur: 60 tot 90 minuten. Korter of langer kan altijd.
+          </p>
         </div>
       </section>
 
@@ -102,6 +105,7 @@ export default function UwBezoekPage() {
           >
             Plan uw bezoek
           </Link>
+          <p className="mt-4 text-sm text-neutral-500">U kunt uw moment later eenvoudig verzetten of annuleren.</p>
         </div>
       </section>
     </main>

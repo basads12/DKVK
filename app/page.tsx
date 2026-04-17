@@ -6,6 +6,7 @@ import { Hero } from "@/components/Hero";
 import { JsonLd } from "@/components/JsonLd";
 import { ReviewsList } from "@/components/ReviewsList";
 import { ThreeSteps } from "@/components/ThreeSteps";
+import { TrustSignals } from "@/components/TrustSignals";
 import { faq, reviews, siteConfig } from "@/content/site";
 import { faqJsonLd, pageMetadata } from "@/lib/seo";
 
@@ -23,8 +24,21 @@ export default function HomePage() {
         headline="Een middag voor u geregeld."
         subheadline="In Hengelo. Op een dag die u uitkomt."
         primaryCta={{ label: "Activeer uw cheque", href: "/cheque" }}
-        secondaryCta={{ label: "Lees wat u kunt verwachten", href: "/uw-bezoek" }}
+        secondaryCta={{ label: "Eerst zien hoe een bezoek verloopt", href: "/uw-bezoek" }}
       />
+
+      <section className="bg-[#F7F4EE] py-10">
+        <div className="mx-auto max-w-default px-5 lg:px-8">
+          <div className="rounded-2xl border border-border bg-white p-6">
+            <p className="text-sm font-medium uppercase tracking-[0.14em] text-gold">Vertrouwd sinds 2005</p>
+            <div className="mt-4 grid gap-4 md:grid-cols-3">
+              <p className="text-sm text-ink">Uitsluitend op afspraak in Hengelo</p>
+              <p className="text-sm text-ink">Rustige ontvangst met koffie of thee</p>
+              <p className="text-sm text-ink">Geen verplichting om iets mee te nemen</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <ThreeSteps
         eyebrow="DE WEG NAAR UW MIDDAG"
@@ -80,6 +94,20 @@ export default function HomePage() {
         items={[reviews.vanKesteren, reviews.ponteyn, reviews.veldhuis]}
       />
 
+      <section className="bg-white py-20 lg:py-24">
+        <div className="mx-auto max-w-narrow px-5 lg:px-8">
+          <h2 className="text-[32px] font-light text-bordeaux lg:text-[48px]">Klaar om uw middag te plannen?</h2>
+          <p className="mt-4 text-lg text-ink">Activeer eerst uw cheque. Daarna kiest u rustig een moment.</p>
+          <Link
+            href="/cheque"
+            className="mt-8 inline-flex min-h-14 items-center justify-center rounded-md bg-bordeaux px-8 text-base font-medium text-creme transition-colors duration-200 ease-dkvk hover:bg-bordeaux-pressed focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bordeaux"
+          >
+            Activeer uw cheque
+          </Link>
+          <TrustSignals className="mt-5" />
+        </div>
+      </section>
+
       <DarkAnchor
         heading={`${siteConfig.address.street}, ${siteConfig.address.city}.`}
         subheading={siteConfig.appointmentOnly}
@@ -91,7 +119,7 @@ export default function HomePage() {
         heading="Een middag voor u geregeld."
         subheading="U kiest de dag. Wij regelen de rest."
         primary={{ label: "Activeer uw cheque", href: "/cheque" }}
-        secondary={{ label: "Lees wat u kunt verwachten", href: "/uw-bezoek" }}
+        secondary={{ label: "Lees hoe uw bezoek verloopt", href: "/uw-bezoek" }}
       />
 
       <FaqList heading="Veelgestelde vragen" items={faq.home} />

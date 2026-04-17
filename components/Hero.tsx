@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { TrustSignals } from "@/components/TrustSignals";
 
 type HeroProps = {
   kicker?: string;
@@ -31,12 +32,13 @@ export function Hero({ kicker, headline, subheadline, primaryCta, secondaryCta }
           {secondaryCta ? (
             <Link
               href={secondaryCta.href}
-              className="inline-flex min-h-12 items-center text-base text-ink underline underline-offset-4 transition-colors duration-150 ease-dkvk hover:text-bordeaux"
+              className="inline-flex min-h-10 items-center text-sm text-muted underline underline-offset-4 transition-colors duration-150 ease-dkvk hover:text-bordeaux"
             >
               {secondaryCta.label}
             </Link>
           ) : null}
         </div>
+        <TrustSignals className="mt-5" />
       </div>
     </section>
   );

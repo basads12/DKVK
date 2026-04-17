@@ -8,10 +8,22 @@ import { TrustSignals } from "@/components/TrustSignals";
 type Step = 1 | 2 | 3 | 4 | 5;
 
 const days = [
-  { id: "maandag", label: "Maandag", note: "Rustig. Veel ruimte om op uw gemak te kijken." },
-  { id: "donderdag", label: "Donderdag", note: "Balans. Levendig, maar met voldoende rust." },
-  { id: "vrijdag", label: "Vrijdag", note: "Rustig en gelijkmatig ingepland." },
-  { id: "zaterdag", label: "Zaterdag", note: "Drukker. Meer bezoekers en meer energie in de galerie." },
+  {
+    id: "maandag",
+    label: "Maandag",
+    note: "De stilste dag. Ideaal als u in alle rust wilt kijken en vergelijken.",
+  },
+  {
+    id: "donderdag",
+    label: "Donderdag",
+    note: "Evenwichtige dag. Rustig tempo met wat meer beweging in de galerie.",
+  },
+  { id: "vrijdag", label: "Vrijdag", note: "Constante dag. Fijn als u een helder, rustig ritme prettig vindt." },
+  {
+    id: "zaterdag",
+    label: "Zaterdag",
+    note: "Levendiger sfeer. Meer bezoekers, meer energie, nog steeds op afspraak.",
+  },
 ];
 
 const times = [
@@ -77,21 +89,21 @@ export function PlannerClient() {
 
         {step === 1 ? (
           <div className="mt-5 space-y-6">
-            <h1 className="text-[40px] font-light text-bordeaux lg:text-[56px]">Welke dag schikt u?</h1>
-            <p className="text-lg text-ink">Kies de sfeer die past bij uw bezoek.</p>
-            <p className="text-sm text-muted">u kunt dit later aanpassen</p>
+            <h1 className="text-[40px] font-light text-bordeaux lg:text-[56px]">Kies uw moment.</h1>
+            <p className="text-lg text-ink">Welke dag past het beste bij de sfeer die u zoekt?</p>
+            <p className="text-sm text-muted">U kunt dit later altijd aanpassen.</p>
             <ul className="space-y-3">
               {days.map((item) => (
                 <li key={item.id}>
                   <button
                     type="button"
                     onClick={() => setDay(item.id)}
-                    className={`w-full rounded-sm border p-4 text-left ${
+                    className={`w-full rounded-xl border p-5 text-left transition-colors ${
                       day === item.id ? "border-bordeaux bg-creme" : "border-border bg-sand"
                     }`}
                   >
                     <p className="text-lg font-medium text-ink">{item.label}</p>
-                    <p className="text-sm text-muted">{item.note}</p>
+                    <p className="mt-1 text-sm text-muted">{item.note}</p>
                   </button>
                 </li>
               ))}
@@ -103,14 +115,14 @@ export function PlannerClient() {
           <div className="mt-5 space-y-6">
             <h1 className="text-[40px] font-light text-bordeaux lg:text-[56px]">Hoe laat schikt het?</h1>
             <p className="text-lg text-ink">Kies het moment dat het beste in uw ritme past.</p>
-            <p className="text-sm text-muted">u kunt dit later aanpassen</p>
+            <p className="text-sm text-muted">U kunt dit later altijd aanpassen.</p>
             <ul className="space-y-3">
               {times.map((item) => (
                 <li key={item.id}>
                   <button
                     type="button"
                     onClick={() => setTime(item.id)}
-                    className={`w-full rounded-sm border p-4 text-left ${
+                    className={`w-full rounded-xl border p-5 text-left transition-colors ${
                       time === item.id ? "border-bordeaux bg-creme" : "border-border bg-sand"
                     }`}
                   >
@@ -119,6 +131,12 @@ export function PlannerClient() {
                 </li>
               ))}
             </ul>
+            <div className="rounded-xl border border-border bg-sand p-4 text-sm leading-relaxed text-ink">
+              <p className="font-medium">Veelgestelde vraag</p>
+              <p className="mt-1">
+                Kan ik later wijzigen? Ja. In uw bevestigingsmail staat een link om rustig te verzetten of annuleren.
+              </p>
+            </div>
           </div>
         ) : null}
 
@@ -190,7 +208,7 @@ export function PlannerClient() {
           <div className="mt-5 space-y-6">
             <h1 className="text-[40px] font-light text-bordeaux lg:text-[56px]">Klopt het zo?</h1>
             <p className="text-lg text-ink">Controleer rustig alles voordat wij uw moment vastleggen.</p>
-            <p className="text-sm text-muted">u kunt dit later aanpassen</p>
+            <p className="text-sm text-muted">U kunt dit later altijd aanpassen.</p>
             <dl className="space-y-3 rounded-sm border border-border bg-sand p-5">
               <div className="flex justify-between gap-4">
                 <dt className="text-muted">Datum</dt>
@@ -209,6 +227,12 @@ export function PlannerClient() {
                 <dd className="text-ink">{form.email}</dd>
               </div>
             </dl>
+            <div className="rounded-xl border border-border bg-white p-4 text-sm leading-relaxed text-ink">
+              <p className="font-medium">Nog een praktische vraag</p>
+              <p className="mt-1">
+                Waarom ziet u geen bedragen? Uw middag is al geregeld. Hier plant u alleen uw bezoekmoment.
+              </p>
+            </div>
           </div>
         ) : null}
 

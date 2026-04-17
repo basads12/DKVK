@@ -106,16 +106,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-sand py-16 md:py-20">
+      <section className="bg-sand py-12 md:py-20">
         <div className="mx-auto max-w-default px-5 md:px-8">
           <p className="text-xs font-medium uppercase tracking-[0.14em] text-gold">Zo werkt het</p>
           <h2 className="mt-3 text-3xl font-semibold text-ink md:text-4xl">In drie stappen naar uw bezoek</h2>
-          <ol className="mt-10 grid gap-8 md:mt-12 md:grid-cols-3 md:gap-0 md:divide-x md:divide-border/50">
+          <ol className="mt-8 grid gap-5 md:mt-12 md:grid-cols-3 md:gap-0 md:divide-x md:divide-border/50">
             {steps.map((step, index) => (
-              <li key={step.title} className="p-5 md:p-6">
-                <p className="text-5xl font-light leading-none text-gold md:text-6xl">{String(index + 1).padStart(2, "0")}</p>
-                <h3 className="mt-3 text-xl font-semibold text-ink">{step.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-ink">{step.body}</p>
+              <li key={step.title} className="py-2 md:p-6">
+                <p className="text-[40px] font-light leading-none text-gold md:text-6xl">{String(index + 1).padStart(2, "0")}</p>
+                <h3 className="mt-2 text-xl font-semibold text-ink md:mt-3">{step.title}</h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-ink md:mt-3">{step.body}</p>
               </li>
             ))}
           </ol>

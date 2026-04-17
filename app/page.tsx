@@ -100,8 +100,8 @@ export default function HomePage() {
       <section className="bg-creme py-16 md:py-20">
         <div className="mx-auto max-w-default px-5 md:px-8">
           <div className="mx-auto max-w-2xl rounded-2xl border border-border bg-sand px-6 py-8 text-center text-sm leading-relaxed text-ink md:text-base">
-            U hoeft niets voor te bereiden. U wordt ontvangen met koffie, kijkt op uw eigen tempo en beslist pas als u er
-            zelf om vraagt.
+            Wij leiden u rustig rond. U wordt ontvangen met koffie, kijkt op uw eigen tempo en beslist pas als u er zelf om
+            vraagt.
           </div>
         </div>
       </section>
@@ -136,8 +136,8 @@ export default function HomePage() {
                 tijd is voor uw vragen en voorkeuren.
               </p>
               <p>
-                U hoeft geen kunstkenner te zijn. We laten werken zien, vertellen alleen waar u om vraagt en laten u vooral
-                zelf kijken.
+                Kunstkennis is niet nodig. We laten werken zien, vertellen alleen waar u om vraagt en laten u vooral zelf
+                kijken.
               </p>
             </div>
           </div>

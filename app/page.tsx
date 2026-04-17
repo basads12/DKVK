@@ -83,6 +83,11 @@ export default function HomePage() {
                 Lees wat u kunt verwachten
               </Link>
             </div>
+            <p className="mt-3 text-xs text-gold">
+              <Link href="/galerie" className="hover:underline hover:underline-offset-4">
+                Nog geen cheque? Lees eerst wie we zijn →
+              </Link>
+            </p>
             <ul className="mt-6 grid gap-2 text-sm text-creme/90 md:grid-cols-3 md:gap-4">
               <li>Op afspraak</li>
               <li>Geen verplichting</li>

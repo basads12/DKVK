@@ -127,7 +127,7 @@ export const faq = {
     },
     {
       q: "Is er parkeergelegenheid?",
-      a: "Ja. Parkeren kan gratis in de straat, meestal recht voor de deur.",
+      a: "Ja. Parkeren voor de deur, altijd gratis.",
     },
     {
       q: "Ik heb geen cheque. Kan ik toch komen?",

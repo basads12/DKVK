@@ -75,6 +75,9 @@ export default function ContactPage() {
             {siteConfig.address.country}
           </address>
           <p className="mt-3 text-base text-ink md:text-[17px]">{siteConfig.appointmentOnly}</p>
+          <p className="mt-3 text-base text-ink md:text-[17px]">
+            Bereikbaar voor afspraken: di–za, 10:00–17:00. Zondag/maandag op aanvraag.
+          </p>
           <p className="mt-3 text-sm text-muted">
             KvK {siteConfig.kvk} · BTW {siteConfig.btw}
           </p>
@@ -104,7 +107,7 @@ export default function ContactPage() {
         <div className="mx-auto max-w-default px-5 lg:px-8">
           <h2 className="text-3xl font-semibold text-bordeaux md:text-4xl">Route.</h2>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink md:text-[17px]">
-            U rijdt via de A1 of A35 naar Hengelo. Parkeren is gratis in de straat, vaak direct voor de deur.
+            U rijdt via de A1 of A35 naar Hengelo. Parkeren is gratis voor de deur.
           </p>
           <div className="mt-8">
             <LazyMap />

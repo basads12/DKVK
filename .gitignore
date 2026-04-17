@@ -32,3 +32,4 @@ docs/thumbs/
 # Audit JSON kan weg — md is de bron
 docs/beeldaudit.json
 docs/video-audit.json
+public/output*/

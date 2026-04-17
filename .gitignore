@@ -9,3 +9,26 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 coverage
+
+# Lokale archiefmap — NOOIT pushen
+.archive/
+
+# DJI drone masters (te groot voor git, staan ook al in .archive)
+Public/Video/*.MP4
+Public/Video/*.AIS
+Public/Video/DJI_*
+!Public/Video/web/
+
+# ZIP-archieven
+*.zip
+
+# macOS crap
+.DS_Store
+**/.DS_Store
+
+# Audit-thumbnails (worden door script gegenereerd, niet broncode)
+docs/thumbs/
+
+# Audit JSON kan weg — md is de bron
+docs/beeldaudit.json
+docs/video-audit.json

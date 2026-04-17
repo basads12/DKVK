@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ChequeDecorativeAnimation } from "@/components/ChequeDecorativeAnimation";
 import { ChequeForm } from "@/components/ChequeForm";
 import { FaqList } from "@/components/FaqList";
 import { JsonLd } from "@/components/JsonLd";
@@ -47,20 +48,7 @@ export default async function ChequePage({ searchParams }: Props) {
               </p>
             </div>
             <div className="order-1 w-full max-w-[280px] lg:order-2 lg:ml-auto lg:max-w-[360px]">
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-                poster="/Video/web/vrouw-met-schilderij-poster.png"
-                role="img"
-                aria-label="Een vrouw houdt een doek vast waarop werken uit de galerie verschijnen."
-                className="h-auto w-full"
-              >
-                <source src="/Video/web/vrouw-met-schilderij.webm" type="video/webm" />
-                <source src="/Video/web/vrouw-met-schilderij-alpha.mp4" type="video/mp4; codecs=hvc1" />
-              </video>
+              <ChequeDecorativeAnimation />
             </div>
           </div>
           {!params.code ? (
